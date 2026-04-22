@@ -1,0 +1,175 @@
+@use '@/styles/variables' as *;
+
+.sidebar {
+  width: $sidebar-width;
+  height: 100vh;
+  background: $color-bg-secondary;
+  border-right: 1px solid $color-border;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  padding: $space-6 0;
+}
+
+// ============================================
+// LOGO
+// ============================================
+.logo {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: 0 $space-6;
+  margin-bottom: $space-8;
+}
+
+.logoMark {
+  font-size: 1.5rem;
+  color: $color-accent;
+  line-height: 1;
+}
+
+.logoText {
+  font-family: $font-display;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  letter-spacing: -0.02em;
+}
+
+// ============================================
+// NAVIGATION
+// ============================================
+.nav {
+  flex: 1;
+  padding: 0 $space-3;
+}
+
+.navLabel {
+  display: block;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: $color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0 $space-3;
+  margin-bottom: $space-3;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-3 $space-3;
+  border-radius: $border-radius-md;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  transition: all $transition-fast;
+  position: relative;
+  text-decoration: none;
+
+  &:hover {
+    background: $color-bg-hover;
+    color: $color-text-primary;
+  }
+
+  &.active {
+    background: rgba(99, 102, 241, 0.12);
+    color: $color-accent-light;
+
+    .navIcon {
+      color: $color-accent;
+    }
+  }
+}
+
+.navIcon {
+  font-size: $font-size-base;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+  transition: color $transition-fast;
+}
+
+.navText {
+  flex: 1;
+}
+
+.activeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $color-accent;
+  flex-shrink: 0;
+}
+
+// ============================================
+// BOTTOM USER CARD
+// ============================================
+.bottom {
+  padding: 0 $space-3;
+  border-top: 1px solid $color-border;
+  padding-top: $space-4;
+  margin-top: $space-4;
+}
+
+.userCard {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-3;
+  border-radius: $border-radius-md;
+  cursor: pointer;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: $color-bg-hover;
+  }
+}
+
+.userAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: $border-radius-sm;
+  background: linear-gradient(135deg, $color-accent, $color-accent-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: white;
+  flex-shrink: 0;
+  font-family: $font-mono;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.userName {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userRole {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  font-family: $font-mono;
+}

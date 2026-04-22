@@ -1,0 +1,295 @@
+@use '@/styles/variables' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+  animation: fadeInUp $transition-slow both;
+}
+
+// ============================================
+// GRID
+// ============================================
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-6;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ============================================
+// SECTION
+// ============================================
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.sectionTitle {
+  font-family: $font-display;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: 1;
+}
+
+.sectionSubtitle {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  font-family: $font-mono;
+  margin-top: -$space-2;
+}
+
+// ============================================
+// CARD
+// ============================================
+.card {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-lg;
+  padding: $space-6;
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+// ============================================
+// PROFILE
+// ============================================
+.profileTop {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+  padding-bottom: $space-5;
+  border-bottom: 1px solid $color-border;
+}
+
+.profileAvatar {
+  width: 56px;
+  height: 56px;
+  border-radius: $border-radius-md;
+  background: linear-gradient(135deg, $color-accent, $color-accent-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: white;
+  font-family: $font-mono;
+  flex-shrink: 0;
+}
+
+.profileMeta {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.profileName {
+  font-family: $font-display;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.profilePlan {
+  font-size: $font-size-xs;
+  color: $color-accent-light;
+  font-family: $font-mono;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 2px $space-2;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+// ============================================
+// FIELDS
+// ============================================
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.label {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: $color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: $font-mono;
+}
+
+.input {
+  padding: $space-3 $space-4;
+  background: $color-bg-secondary;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  font-family: $font-body;
+}
+
+// ============================================
+// PREFERENCES
+// ============================================
+.preferenceGroup {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.preferenceLabel {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  font-family: $font-body;
+}
+
+.preferenceDesc {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  font-family: $font-mono;
+  margin-top: -$space-2;
+}
+
+// ============================================
+// SELECT
+// ============================================
+.select {
+  padding: $space-3 $space-4;
+  background: $color-bg-secondary;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  font-family: $font-mono;
+  cursor: pointer;
+  transition: border-color $transition-fast;
+  outline: none;
+  width: 100%;
+
+  &:focus {
+    border-color: $color-accent;
+  }
+
+  option {
+    background: $color-bg-card;
+    color: $color-text-primary;
+  }
+}
+
+// ============================================
+// DIVIDER
+// ============================================
+.divider {
+  height: 1px;
+  background: $color-border;
+}
+
+// ============================================
+// TOGGLES
+// ============================================
+.toggleList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.toggleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-4;
+}
+
+.toggleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toggleLabel {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+}
+
+.toggleDesc {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  font-family: $font-mono;
+}
+
+.toggle {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: $color-bg-hover;
+  border: 1px solid $color-border;
+  cursor: pointer;
+  transition: all $transition-base;
+  position: relative;
+  flex-shrink: 0;
+
+  &.toggleOn {
+    background: $color-accent;
+    border-color: $color-accent;
+  }
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  transition: transform $transition-base;
+
+  .toggleOn & {
+    transform: translateX(20px);
+  }
+}
+
+// ============================================
+// SAVE BUTTON
+// ============================================
+.saveBtn {
+  width: 100%;
+  padding: $space-3;
+  background: $color-accent;
+  color: white;
+  border: none;
+  border-radius: $border-radius-md;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  font-family: $font-body;
+  cursor: pointer;
+  transition: all $transition-base;
+
+  &:hover {
+    background: $color-accent-dark;
+    transform: translateY(-1px);
+    box-shadow: $shadow-accent;
+  }
+}
+
+.savedBtn {
+  background: $color-success;
+
+  &:hover {
+    background: $color-success;
+  }
+}

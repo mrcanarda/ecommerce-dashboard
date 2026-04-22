@@ -1,0 +1,183 @@
+@use '@/styles/variables' as *;
+
+.card {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-lg;
+  padding: $space-6;
+  animation: fadeInUp $transition-slow both;
+  animation-delay: 400ms;
+}
+
+// ============================================
+// HEADER
+// ============================================
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: $space-6;
+}
+
+.title {
+  font-family: $font-display;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: 1;
+  margin-bottom: $space-1;
+}
+
+.subtitle {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  font-family: $font-mono;
+}
+
+.viewAll {
+  font-size: $font-size-xs;
+  color: $color-accent-light;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: $font-mono;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+// ============================================
+// TABLE
+// ============================================
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead tr th {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    color: $color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: $font-mono;
+    padding: $space-2 $space-3;
+    text-align: left;
+    border-bottom: 1px solid $color-border;
+  }
+}
+
+.row {
+  transition: background $transition-fast;
+
+  &:hover {
+    background: $color-bg-hover;
+  }
+
+  td {
+    padding: $space-3;
+    border-bottom: 1px solid $color-border;
+    vertical-align: middle;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &:last-child td {
+    border-bottom: none;
+  }
+}
+
+// ============================================
+// CELLS
+// ============================================
+.orderId {
+  font-family: $font-mono;
+  font-size: $font-size-xs;
+  color: $color-accent-light;
+  font-weight: $font-weight-medium;
+}
+
+.customer {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: $border-radius-sm;
+  background: linear-gradient(135deg, $color-accent, $color-accent-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: $font-weight-bold;
+  color: white;
+  font-family: $font-mono;
+  flex-shrink: 0;
+}
+
+.customerName {
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+.total {
+  font-family: $font-mono;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.date {
+  font-family: $font-mono;
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
+
+// ============================================
+// BADGES
+// ============================================
+.badge {
+  font-size: 10px;
+  font-weight: $font-weight-semibold;
+  font-family: $font-mono;
+  padding: 3px $space-2;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &.pending {
+    color: $color-warning;
+    background: rgba(245, 158, 11, 0.1);
+  }
+
+  &.processing {
+    color: $color-info;
+    background: rgba(59, 130, 246, 0.1);
+  }
+
+  &.shipped {
+    color: $color-accent-light;
+    background: rgba(99, 102, 241, 0.1);
+  }
+
+  &.delivered {
+    color: $color-success;
+    background: rgba(34, 197, 94, 0.1);
+  }
+
+  &.cancelled {
+    color: $color-danger;
+    background: rgba(239, 68, 68, 0.1);
+  }
+}

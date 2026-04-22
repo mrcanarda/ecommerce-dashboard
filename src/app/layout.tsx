@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import '@/styles/globals.scss'
 
 export const metadata: Metadata = {
-  title: 'Orion - E-commerce Dashboard', 
+  title: 'Orion — E-commerce Dashboard',
   description: 'Modern e-commerce management dashboard',
 }
 

@@ -1,0 +1,48 @@
+@use '@/styles/variables' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+// ============================================
+// KPI GRID
+// ============================================
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-4;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// ============================================
+// CHARTS GRID
+// ============================================
+.chartsGrid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: $space-4;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.revenueChart {
+  min-width: 0;
+}
+
+.categoryChart {
+  min-width: 0;
+}
+
+// ============================================
+// ORDERS ROW
+// ============================================
+.ordersRow {
+  width: 100%;
+}

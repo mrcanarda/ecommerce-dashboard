@@ -1,0 +1,294 @@
+@use '@/styles/variables' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+  animation: fadeInUp $transition-slow both;
+}
+
+// ============================================
+// SUMMARY GRID
+// ============================================
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-4;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.summaryCard {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-lg;
+  padding: $space-5 $space-6;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  transition: all $transition-base;
+
+  &:hover {
+    border-color: $color-border-light;
+    transform: translateY(-2px);
+  }
+}
+
+.summaryLabel {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: $color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: $font-mono;
+}
+
+.summaryValue {
+  font-family: $font-display;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: 1;
+
+  &.success { color: $color-success; }
+  &.danger  { color: $color-danger; }
+}
+
+// ============================================
+// ACTIONS
+// ============================================
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  padding: $space-1;
+}
+
+.filterBtn {
+  padding: $space-2 $space-4;
+  border-radius: $border-radius-sm;
+  border: none;
+  background: none;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+  font-family: $font-body;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: $color-text-primary;
+    background: $color-bg-hover;
+  }
+
+  &.filterActive {
+    background: $color-accent;
+    color: white;
+  }
+}
+
+.exportBtn {
+  padding: $space-2 $space-5;
+  background: $color-bg-card;
+  color: $color-text-secondary;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  font-family: $font-body;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    border-color: $color-accent;
+    color: $color-accent-light;
+  }
+}
+
+// ============================================
+// CUSTOMERS GRID
+// ============================================
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-4;
+
+  @media (max-width: 1400px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.customerCard {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-lg;
+  padding: $space-5;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  transition: all $transition-base;
+  animation: fadeInUp $transition-slow both;
+  cursor: default;
+
+  &:hover {
+    border-color: $color-accent;
+    box-shadow: $shadow-accent;
+    transform: translateY(-2px);
+  }
+}
+
+// ============================================
+// CARD TOP
+// ============================================
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: $border-radius-md;
+  background: linear-gradient(135deg, $color-accent, $color-accent-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  color: white;
+  font-family: $font-mono;
+  flex-shrink: 0;
+}
+
+.statusBadge {
+  font-size: 10px;
+  font-weight: $font-weight-semibold;
+  font-family: $font-mono;
+  padding: 3px $space-2;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &.active {
+    color: $color-success;
+    background: rgba(34, 197, 94, 0.1);
+  }
+
+  &.inactive {
+    color: $color-text-muted;
+    background: rgba(107, 114, 128, 0.1);
+  }
+}
+
+// ============================================
+// CUSTOMER INFO
+// ============================================
+.customerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.customerName {
+  font-family: $font-display;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: 1.2;
+}
+
+.customerEmail {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  font-family: $font-mono;
+}
+
+.customerLocation {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  margin-top: $space-1;
+}
+
+// ============================================
+// DIVIDER
+// ============================================
+.divider {
+  height: 1px;
+  background: $color-border;
+}
+
+// ============================================
+// STATS ROW
+// ============================================
+.statsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.statValue {
+  font-family: $font-mono;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.statLabel {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  font-family: $font-mono;
+}
+
+.statDivider {
+  width: 1px;
+  height: 32px;
+  background: $color-border;
+}
+
+// ============================================
+// VIEW BUTTON
+// ============================================
+.viewBtn {
+  width: 100%;
+  padding: $space-2;
+  background: none;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  color: $color-text-secondary;
+  font-size: $font-size-xs;
+  font-family: $font-mono;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: all $transition-fast;
+  text-align: center;
+
+  &:hover {
+    border-color: $color-accent;
+    color: $color-accent-light;
+    background: rgba(99, 102, 241, 0.05);
+  }
+}

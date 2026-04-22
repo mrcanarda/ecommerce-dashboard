@@ -1,0 +1,87 @@
+@use '@/styles/variables' as *;
+
+.card {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-lg;
+  padding: $space-6;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  transition: all $transition-base;
+  animation: fadeInUp $transition-slow both;
+  cursor: default;
+
+  &:hover {
+    border-color: $color-accent;
+    box-shadow: $shadow-accent;
+    transform: translateY(-2px);
+  }
+}
+
+// ============================================
+// TOP ROW
+// ============================================
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: $color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: $font-mono;
+}
+
+.icon {
+  font-size: $font-size-lg;
+  opacity: 0.8;
+}
+
+// ============================================
+// VALUE
+// ============================================
+.value {
+  font-family: $font-display;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+// ============================================
+// BOTTOM ROW
+// ============================================
+.bottom {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+}
+
+.change {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  font-family: $font-mono;
+  padding: 2px $space-2;
+  border-radius: 4px;
+
+  &.positive {
+    color: $color-success;
+    background: rgba(34, 197, 94, 0.1);
+  }
+
+  &.negative {
+    color: $color-danger;
+    background: rgba(239, 68, 68, 0.1);
+  }
+}
+
+.changeLabel {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
