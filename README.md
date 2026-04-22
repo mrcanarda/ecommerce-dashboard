@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Orion — E-commerce Dashboard
 
-## Getting Started
+A full-stack e-commerce management dashboard built with **Next.js**, **TypeScript**, **SCSS**, and a **C# / ASP.NET Core** REST API backed by **PostgreSQL**.
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Frontend
+| | |
+|---|---|
+| Framework | Next.js 16 + TypeScript |
+| Styling | SCSS Modules |
+| Charts | Recharts |
+| Routing | Next.js App Router |
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Backend
+| | |
+|---|---|
+| Framework | ASP.NET Core 10 Web API |
+| Language | C# 13 |
+| ORM | Entity Framework Core 10 |
+| Database | PostgreSQL 16 |
+| Auth | JWT Bearer Tokens |
+| Testing | xUnit — 24 passing tests |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Dashboard** — KPI cards, revenue area chart, sales by category donut chart
+- **Products** — List, filter by status/category, create, edit, delete
+- **Orders** — Paginated list, filter by status, update order status
+- **Customers** — Customer cards with stats
+- **Settings** — Currency selector, notification toggles, profile
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
